@@ -17,12 +17,11 @@ class WordsProvider {
         ''');
 
       db.insert('Words',
-          {'word': 'AppleXX', 'example_sentence': 'is nice', 'state': 2});
+          {'word': 'AppleXX3', 'example_sentence': 'is nice', 'state': 2});
       db.insert('Words',
-          {'word': 'Car', 'example_sentence': 'car is fast', 'state': 0});
-
-      db.insert('Words',
-          {'word': 'Fire', 'example_sentence': 'hot hot hot', 'state': 1});
+          {'word': 'Car4', 'example_sentence': 'car is fast', 'state': 0});
+      print("---");
+      print(db.rawQuery('SELECT * FROM "Words"'));
     });
   }
 
@@ -34,7 +33,6 @@ class WordsProvider {
   }
 
   static Future insertWord(Map<String, dynamic> word) async {
-    print(word);
     await db.insert('Words', word);
   }
 }
