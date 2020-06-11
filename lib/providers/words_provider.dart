@@ -1,8 +1,6 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
-import '../ap_localisations.dart';
-
 class WordsProvider {
   static Database db;
 

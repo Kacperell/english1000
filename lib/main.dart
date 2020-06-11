@@ -1,4 +1,5 @@
 import 'package:english1000/pages/home.dart';
+import 'package:english1000/pages/wordView.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -7,6 +8,7 @@ import 'ap_localisations.dart';
 void main() {
   runApp(MaterialApp(
     // home: Home(),
+
     supportedLocales: [
       Locale('en', 'EN'),
       Locale('pl', 'PL'),
@@ -28,7 +30,7 @@ void main() {
     initialRoute: '/',
     routes: {
       '/': (context) => Home(),
-      // '/home': (context) => Home(),
+      '/wordView': (context) => WordView(),
       // '/location': (context) => ChooseLocation()
     },
   ));

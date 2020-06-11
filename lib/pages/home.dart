@@ -1,7 +1,6 @@
+import 'package:english1000/pages/wordView.dart';
 import 'package:english1000/providers/words_provider.dart';
 import 'package:flutter/material.dart';
-
-import '../ap_localisations.dart';
 
 class Home extends StatefulWidget {
   Home({Key key}) : super(key: key);
@@ -16,7 +15,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue[900],
-          title: const Text('Most common english words 👅'),
+          title: const Text('Most common English words 👅'),
           actions: <Widget>[
             IconButton(
               icon: const Icon(Icons.settings),
@@ -71,6 +70,13 @@ class _HomeButton extends StatelessWidget {
                 onPressed: () async {
                   var count = await WordsProvider.getCount(_categoryState);
                   print(count);
+
+                  await Navigator.pushNamed(context, '/wordView',
+                      arguments: {'exampleArgument': 'xddd'});
+
+                  // TODO set first of categori to id from which we will start
+                  // TODO view and give them id of word
+                  // TODO next prev id ++ -- ? ,they will not always be in order?;
                 },
               );
             }
