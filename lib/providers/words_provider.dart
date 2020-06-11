@@ -68,6 +68,15 @@ class WordsProvider {
     return quries.length;
   }
 
+  static Future getWordsFromState(int state) async {
+    if (db == null) {
+      print("null");
+      await open();
+    }
+
+    return await db.query('Words', where: '"state" = ?', whereArgs: [state]);
+  }
+
   static Future replaceWords() async {
     db.execute('''
           drop table Words;

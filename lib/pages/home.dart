@@ -57,6 +57,10 @@ class _HomeButton extends StatelessWidget {
           future: WordsProvider.getCount(_categoryState),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
+              // int count = snapshot.data;
+
+              // print(snapshot.data.map());
+
               return RaisedButton.icon(
                 icon: Icon(
                   _icon,
@@ -68,8 +72,10 @@ class _HomeButton extends StatelessWidget {
                   style: TextStyle(fontSize: 20),
                 ),
                 onPressed: () async {
-                  var count = await WordsProvider.getCount(_categoryState);
-                  print(count);
+                  var words =
+                      await WordsProvider.getWordsFromState(_categoryState);
+                  // int count = words.lenght;
+                  print(words);
 
                   await Navigator.pushNamed(context, '/wordView',
                       arguments: {'exampleArgument': 'xddd'});
