@@ -1,4 +1,7 @@
 {
-    "first_string": "Dzień dobry!!",
-    "second_string": "To po polsku"
+    "to_check": "Do sprawdzenia",
+    "checked_saved": "Zapamiętane",
+    "to_repeat": "Do powtórzenia",
+    "example": "Przykład:",
+    "see_translete": "Pokaż tłumaczenie"
 }

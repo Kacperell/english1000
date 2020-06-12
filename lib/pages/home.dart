@@ -2,6 +2,8 @@ import 'package:english1000/pages/wordView.dart';
 import 'package:english1000/providers/words_provider.dart';
 import 'package:flutter/material.dart';
 
+import '../ap_localisations.dart';
+
 class Home extends StatefulWidget {
   Home({Key key}) : super(key: key);
 
@@ -16,6 +18,8 @@ class _HomeState extends State<Home> {
         appBar: AppBar(
           backgroundColor: Colors.blue[900],
           title: const Text('Most common English words 👅'),
+          automaticallyImplyLeading: false, //hide back button
+
           actions: <Widget>[
             IconButton(
               icon: const Icon(Icons.settings),
@@ -30,11 +34,16 @@ class _HomeState extends State<Home> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
+              // TODO moze tu logo dac?
+              _HomeButton(AppLocalizations.of(context).translate('to_check'),
+                  Icons.spellcheck, Colors.blue[800], 0),
               _HomeButton(
-                  'Do sprawdzenia', Icons.spellcheck, Colors.blue[800], 0),
-              _HomeButton('Zapamiętane', Icons.check_circle_outline,
-                  Colors.green[800], 1),
-              _HomeButton('Do powtórzenia', Icons.repeat, Colors.red[800], 2),
+                  AppLocalizations.of(context).translate('checked_saved'),
+                  Icons.check_circle_outline,
+                  Colors.green[800],
+                  1),
+              _HomeButton(AppLocalizations.of(context).translate('to_repeat'),
+                  Icons.repeat, Colors.red[800], 2),
             ],
           ),
         ));
@@ -57,10 +66,6 @@ class _HomeButton extends StatelessWidget {
           future: WordsProvider.getCount(_categoryState),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
-              // int count = snapshot.data;
-
-              // print(snapshot.data.map());
-
               return RaisedButton.icon(
                 icon: Icon(
                   _icon,
@@ -72,22 +77,39 @@ class _HomeButton extends StatelessWidget {
                   style: TextStyle(fontSize: 20),
                 ),
                 onPressed: () async {
-                  var words =
-                      await WordsProvider.getWordsFromState(_categoryState);
-                  // int count = words.lenght;
-                  print(words);
+                  print(AppLocalizations.of(context).translate('to_check'));
+                  print("fsa");
 
-                  await Navigator.pushNamed(context, '/wordView',
-                      arguments: {'exampleArgument': 'xddd'});
+                  var wordQuery =
+                      await WordsProvider.getOneWordFromState(_categoryState);
+                  if (wordQuery.isEmpty) {
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            content: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text("Tutaj nie ma Twoich słówek 🤔"),
+                            ),
+                          );
+                        });
+                    return;
+                  }
+                  await Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              WordView(_color, _categoryState, wordQuery[0])));
 
-                  // TODO set first of categori to id from which we will start
-                  // TODO view and give them id of word
-                  // TODO next prev id ++ -- ? ,they will not always be in order?;
+                  // await Navigator.pushNamed(context, '/wordView',
+                  //     arguments: {
+                  //       'colorAppbar': _color,
+                  //       'state_of_words': _categoryState,
+                  //     });
                 },
               );
             }
             return Center(child: CircularProgressIndicator());
-            // return Center(child: CircularProgressIndicator());
           }),
     );
   }

@@ -30,8 +30,9 @@ void main() {
     initialRoute: '/',
     routes: {
       '/': (context) => Home(),
-      '/wordView': (context) => WordView(),
-      // '/location': (context) => ChooseLocation()
+      // '/wordView': (context) => WordView(),
+      // TODO settings
+      // '/settings': (context) => Settings()
     },
   ));
 }

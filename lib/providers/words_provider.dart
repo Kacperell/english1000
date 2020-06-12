@@ -22,41 +22,29 @@ class WordsProvider {
         ''');
       db.insert('Words', {
         'word': 'Car',
-        'example_sentence': 'car is fast',
-        'pl_translate': 'samochód',
-        'pl_example': 'Samochód jest szybki',
+        'example_sentence': "I'm driving my fast car.",
+        'pl_translate': 'Samochód',
+        'pl_example': 'Jadę moim szybkim samochodem.',
         'state': 0
       });
       db.insert('Words', {
         'word': 'Dog',
-        'example_sentence': 'the dog is barking',
-        'pl_translate': 'Pie',
+        'example_sentence': 'The dog is barking',
+        'pl_translate': 'Pies',
         'pl_example': 'Pies szczeka',
         'state': 0
       });
     });
   }
 
-  static Future<List<Map<String, dynamic>>> getWordsList() async {
-    if (db == null) {
-      print("null");
-      await open();
-    }
+  // static Future<List<Map<String, dynamic>>> getWordsList() async {
+  //   if (db == null) {
+  //     print("null");
+  //     await open();
+  //   }
 
-    return await db.query('Words');
-  }
-
-  static Future insertWord(Map<String, dynamic> word) async {
-    await db.insert('Words', word);
-  }
-
-  static Future getWord(int id) async {
-    if (db == null) {
-      print("null");
-      await open();
-    }
-    return await db.query('Words', where: '"id" = ?', whereArgs: [id]);
-  }
+  //   return await db.query('Words');
+  // }
 
   static Future getCount(int state) async {
     if (db == null) {
@@ -68,42 +56,65 @@ class WordsProvider {
     return quries.length;
   }
 
-  static Future getWordsFromState(int state) async {
+  static Future getOneWordFromState(int state) async {
     if (db == null) {
       print("null");
       await open();
     }
-
-    return await db.query('Words', where: '"state" = ?', whereArgs: [state]);
-  }
-
-  static Future replaceWords() async {
-    db.execute('''
-          drop table Words;
-        ''');
-    db.execute('''
-          create table Words(
-            id integer primary key autoincrement,
-            word text not null,
-            example_sentence text not null,
-            pl_translate text not null,
-            pl_example text not null,
-            state int
-          );
-        ''');
-    db.insert('Words', {
-      'word': 'Car',
-      'example_sentence': 'car is fast',
-      'pl_translate': 'samochód',
-      'pl_example': 'Samochód jest szybki',
-      'state': 0
-    });
-    db.insert('Words', {
-      'word': 'Dog',
-      'example_sentence': 'the dog is barking',
-      'pl_translate': 'Pie',
-      'pl_example': 'Pies szczeka',
-      'state': 0
-    });
+    return await db
+        .rawQuery('SELECT * FROM "Words" where state=$state LIMIT 1');
   }
 }
+
+//  static Future insertWord(Map<String, dynamic> word) async {
+//     await db.insert('Words', word);
+//   }
+
+//  static Future getWord(int id) async {
+//     if (db == null) {
+//       print("null");
+//       await open();
+//     }
+//     return await db.query('Words', where: '"id" = ?', whereArgs: [id]);
+//   }
+
+// static Future getWordsFromState(int state) async {
+// //  unused
+//   if (db == null) {
+//     print("null");
+//     await open();
+//   }
+//   return await db.query('Words', where: '"state" = ?', whereArgs: [state]);
+// }
+
+//   static Future replaceWords() async {
+//     db.execute('''
+//           drop table Words;
+//         ''');
+//     db.execute('''
+//           create table Words(
+//             id integer primary key autoincrement,
+//             word text not null,
+//             example_sentence text not null,
+//             pl_translate text not null,
+//             pl_example text not null,
+//             state int
+//           );
+//         ''');
+//     db.insert('Words', {
+//       'word': 'Car',
+//       'example_sentence': 'car is fast',
+//       'pl_translate': 'samochód',
+//       'pl_example': 'Samochód jest szybki',
+//       'state': 0
+//     });
+//     db.insert('Words', {
+//       'word': 'Dog',
+//       'example_sentence': 'the dog is barking',
+//       'pl_translate': 'Pie',
+//       'pl_example': 'Pies szczeka',
+//       'state': 0
+//     });
+//   }
+
+// }
