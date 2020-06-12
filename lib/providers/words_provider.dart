@@ -29,9 +29,16 @@ class WordsProvider {
       });
       db.insert('Words', {
         'word': 'Dog',
-        'example_sentence': 'The dog is barking',
+        'example_sentence': 'The dog is barking.',
         'pl_translate': 'Pies',
         'pl_example': 'Pies szczeka',
+        'state': 0
+      });
+      db.insert('Words', {
+        'word': 'Family',
+        'example_sentence': 'You are like family to me.',
+        'pl_translate': 'Rodzina',
+        'pl_example': 'Jesteś dla mnie jak rodzina.',
         'state': 0
       });
     });
@@ -63,6 +70,11 @@ class WordsProvider {
     }
     return await db
         .rawQuery('SELECT * FROM "Words" where state=$state LIMIT 1');
+  }
+
+  static Future updateWord(int state, int id) async {
+    // await db.update('Notes', word, where: 'id = ?', whereArgs: [word['id']]);
+    await db.rawQuery('UPDATE "Words" set state=$state where id=$id');
   }
 }
 

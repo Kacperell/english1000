@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:english1000/providers/words_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:audioplayers/audio_cache.dart';
@@ -21,7 +22,6 @@ class _WordViewState extends State<WordView> {
   @override
   Widget build(BuildContext context) {
     // final Map arguments = ModalRoute.of(context).settings.arguments as Map;
-    print(widget.wordQuery['word']);
     return WillPopScope(
       onWillPop: () async {
         await Navigator.pushReplacementNamed(
@@ -32,7 +32,6 @@ class _WordViewState extends State<WordView> {
       },
       child: Scaffold(
         appBar: AppBar(
-          // backgroundColor: arguments['colorAppbar'],
           leading: BackButton(color: Colors.white),
           backgroundColor: widget.appBarColor,
           title: const Text('Most common English words 👅'),
@@ -45,7 +44,6 @@ class _WordViewState extends State<WordView> {
                 IconButton(
                     icon: Icon(Icons.volume_up),
                     onPressed: () {
-                      print("sound!");
                       final player = AudioCache();
                       // call this method when desired
                       player.play('mp3/${widget.wordQuery['word']}.mp3');
@@ -61,9 +59,7 @@ class _WordViewState extends State<WordView> {
                     IconButton(
                         icon: Icon(Icons.volume_up),
                         onPressed: () {
-                          print("sound!");
                           final player = AudioCache();
-                          // call this method when desired
                           player.play(
                               'mp3/${widget.wordQuery['word']}_sentence.mp3');
                         }),
@@ -86,6 +82,7 @@ class _WordViewState extends State<WordView> {
                     Container(
                       child: Center(
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
                               widget.wordQuery['pl_translate'],
@@ -118,30 +115,48 @@ class _WordViewState extends State<WordView> {
                   ],
                 ),
                 SizedBox(height: 20),
-                RaisedButton.icon(
-                    color: Colors.yellow[900],
-                    onPressed: () {
-                      setState(() {
-                        print(blur);
-                        if (blur == 0) {
-                          blur = 7;
-                          print('e');
-                        } else {
-                          blur = 0;
-                          print('4');
-                        }
-                      });
-                    },
-                    icon: Icon(
-                      Icons.lock_open,
-                      color: Colors.white,
-                    ),
-                    label: Text(
-                      AppLocalizations.of(context).translate('see_translete'),
-                      style: TextStyle(color: Colors.white),
-                    )),
+                ButtonTheme(
+                  height: 50,
+                  child: RaisedButton.icon(
+                      color: Colors.yellow[900],
+                      onPressed: () {
+                        setState(() {
+                          if (blur == 0) {
+                            blur = 7;
+                          } else {
+                            blur = 0;
+                          }
+                        });
+                      },
+                      icon: Icon(
+                        Icons.lock_open,
+                        color: Colors.white,
+                      ),
+                      label: Text(
+                        AppLocalizations.of(context).translate('see_translete'),
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      )),
+                ),
+                SizedBox(height: 20),
                 Row(
-                  children: [],
+                  children: [
+                    KnowOrNotButton(
+                        AppLocalizations.of(context).translate('know'),
+                        Icons.check_circle_outline,
+                        Colors.green[800],
+                        widget.wordQuery['id'],
+                        widget.wordQuery['state'],
+                        1,
+                        widget.appBarColor),
+                    KnowOrNotButton(
+                        AppLocalizations.of(context).translate('not_know'),
+                        Icons.repeat,
+                        Colors.red[800],
+                        widget.wordQuery['id'],
+                        widget.wordQuery['state'],
+                        2,
+                        widget.appBarColor),
+                  ],
                 )
               ],
             ),
@@ -151,3 +166,94 @@ class _WordViewState extends State<WordView> {
     );
   }
 }
+
+class KnowOrNotButton extends StatelessWidget {
+  final String _btnText;
+  final IconData _icon;
+  final Color _color;
+  final Color _appBarColorToNextWord;
+  final int _word_id;
+  final int _categoryState;
+  final int _to_categoryState;
+  // final int _categoryState;
+  KnowOrNotButton(this._btnText, this._icon, this._color, this._word_id,
+      this._categoryState, this._to_categoryState, this._appBarColorToNextWord);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(4.0),
+        child: ButtonTheme(
+          height: 60,
+          child: RaisedButton.icon(
+              onPressed: () async {
+                await WordsProvider.updateWord(_to_categoryState, _word_id);
+
+                // TODO next word
+                print(_categoryState);
+
+                var wordQuery =
+                    await WordsProvider.getOneWordFromState(_categoryState);
+                print(wordQuery);
+
+                if (wordQuery.isEmpty) {
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          content: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(AppLocalizations.of(context)
+                                .translate('no_more_words')),
+                          ),
+                        );
+                      });
+                  return;
+                }
+                await Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => WordView(_appBarColorToNextWord,
+                            _categoryState, wordQuery[0])));
+              },
+              color: _color,
+              icon: Icon(
+                _icon,
+                color: Colors.white,
+              ),
+              label: Text(
+                _btnText,
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              )),
+        ),
+      ),
+    );
+  }
+}
+// class KnowOrNotButton extends StatelessWidget {
+//   final String _btnText;
+//   final IconData _icon;
+//   final Color _color;
+//   // final int _categoryState;
+//   KnowOrNotButton(this._btnText, this._icon, this._color);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return ButtonTheme(
+//       minWidth: 150.0,
+//       height: 60,
+//       child: RaisedButton.icon(
+//           onPressed: () {},
+//           color: _color,
+//           icon: Icon(
+//             _icon,
+//             color: Colors.white,
+//           ),
+//           label: Text(
+//             _btnText,
+//             style: TextStyle(color: Colors.white),
+//           )),
+//     );
+//   }
+// }

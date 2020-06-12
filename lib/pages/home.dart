@@ -78,7 +78,6 @@ class _HomeButton extends StatelessWidget {
                 ),
                 onPressed: () async {
                   print(AppLocalizations.of(context).translate('to_check'));
-                  print("fsa");
 
                   var wordQuery =
                       await WordsProvider.getOneWordFromState(_categoryState);
@@ -89,7 +88,8 @@ class _HomeButton extends StatelessWidget {
                           return AlertDialog(
                             content: Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text("Tutaj nie ma Twoich słówek 🤔"),
+                              child: Text(AppLocalizations.of(context)
+                                  .translate('no_words')),
                             ),
                           );
                         });
