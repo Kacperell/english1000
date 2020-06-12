@@ -1,5 +1,6 @@
 import 'package:english1000/pages/wordView.dart';
 import 'package:english1000/providers/words_provider.dart';
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 
 import '../ap_localisations.dart';
@@ -12,6 +13,34 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  static MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
+    keywords: <String>['flutterio', 'beautiful apps'],
+    contentUrl: 'https://flutter.io',
+    childDirected: false,
+    testDevices: <String>[], // Android emulators are considered test devices
+  );
+
+  BannerAd myBanner = BannerAd(
+    adUnitId: BannerAd.testAdUnitId,
+    size: AdSize.fullBanner,
+    targetingInfo: targetingInfo,
+    listener: (MobileAdEvent event) {
+      print("BannerAd event is $event");
+    },
+  );
+
+  @override
+  void initState() {
+    FirebaseAdMob.instance
+        .initialize(appId: 'ca-app-pub-9477426267530319~9841577958');
+    super.initState();
+    myBanner..load();
+  }
+
+  void showAds() {
+    myBanner..show();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,14 +65,15 @@ class _HomeState extends State<Home> {
             children: [
               // TODO moze tu logo dac?
               _HomeButton(AppLocalizations.of(context).translate('to_check'),
-                  Icons.spellcheck, Colors.blue[800], 0),
+                  Icons.spellcheck, Colors.blue[800], 0, showAds),
               _HomeButton(
                   AppLocalizations.of(context).translate('checked_saved'),
                   Icons.check_circle_outline,
                   Colors.green[800],
-                  1),
+                  1,
+                  showAds),
               _HomeButton(AppLocalizations.of(context).translate('to_repeat'),
-                  Icons.repeat, Colors.red[800], 2),
+                  Icons.repeat, Colors.red[800], 2, showAds),
             ],
           ),
         ));
@@ -55,7 +85,9 @@ class _HomeButton extends StatelessWidget {
   final IconData _icon;
   final Color _color;
   final int _categoryState;
-  _HomeButton(this._text, this._icon, this._color, this._categoryState);
+  Function showAds;
+  _HomeButton(
+      this._text, this._icon, this._color, this._categoryState, this.showAds);
 
   @override
   Widget build(BuildContext context) {
@@ -66,6 +98,10 @@ class _HomeButton extends StatelessWidget {
           future: WordsProvider.getCount(_categoryState),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
+              if (_categoryState == 0 && snapshot.data < 1) {
+                // pozniej zrobic ze gdy bedize mniejszy od 985
+                showAds();
+              }
               return RaisedButton.icon(
                 icon: Icon(
                   _icon,
@@ -114,86 +150,3 @@ class _HomeButton extends StatelessWidget {
     );
   }
 }
-
-// class _HomeButton extends StatelessWidget {
-//   final String _text;
-//   final IconData _icon;
-//   final Color _color;
-//   final int _categoryState;
-//   _HomeButton(this._text, this._icon, this._color, this._categoryState);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return ButtonTheme(
-//       minWidth: 250.0,
-//       height: 60,
-//       child: RaisedButton.icon(
-//         icon: Icon(
-//           _icon,
-//         ),
-//         color: _color,
-//         textColor: Colors.white,
-//         label: Text(
-//           _text,
-//           style: TextStyle(fontSize: 20),
-//         ),
-//         onPressed: () async {
-//           var count = await WordsProvider.getCount(_categoryState);
-//           print(count);
-//         },
-//       ),
-//     );
-//   }
-// }
-
-// class _HomeState extends State<Home> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//         appBar: AppBar(
-//           backgroundColor: Colors.blue[900],
-//           title: Text('English 1000 👅'),
-//           centerTitle: true,
-//           elevation: 0,
-//         ),
-//         body: FutureBuilder(
-//             future: WordsProvider.getWordsList(),
-//             builder: (context, snapshot) {
-//               if (snapshot.connectionState == ConnectionState.done) {
-//                 final words = snapshot.data;
-//                 return ListView.builder(
-//                   itemBuilder: (context, index) {
-//                     return Column(
-//                       children: [
-//                         Text(words[index]['word']),
-//                         Text(AppLocalizations.of(context).lng),
-//                         FlatButton(
-//                             onPressed: () {
-//                               WordsProvider.insertWord({
-//                                 'word': 'ice',
-//                                 'example_sentence': 'realdy cold',
-//                                 'state': 3,
-//                               });
-//                               // print(words);
-//                             },
-//                             child: Text(AppLocalizations.of(context)
-//                                 .translate('first_string'))),
-//                       ],
-//                     );
-//                   },
-//                   itemCount: words.length,
-//                 );
-//               }
-//               return Center(child: CircularProgressIndicator());
-//             }),
-//         floatingActionButton: FloatingActionButton(
-//           onPressed: () async {
-//             // Add your onPressed code here!
-//             await WordsProvider.replaceWords();
-//             setState(() {});
-//           },
-//           child: Icon(Icons.delete_forever),
-//           backgroundColor: Colors.green,
-//         ));
-//   }
-// }

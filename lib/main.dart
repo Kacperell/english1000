@@ -1,11 +1,18 @@
 import 'package:english1000/pages/home.dart';
 import 'package:english1000/pages/wordView.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'ap_localisations.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
+  await SystemChrome.setEnabledSystemUIOverlays([]);
+
   runApp(MaterialApp(
     // home: Home(),
 

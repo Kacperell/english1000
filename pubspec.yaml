@@ -27,6 +27,7 @@ dependencies:
   path: ^1.7.0  
   # path_provider: ^0.5.0+1  
   audioplayers: ^0.15.1
+  firebase_admob: ^0.9.3+2
   
   flutter_localizations:
     sdk: flutter
