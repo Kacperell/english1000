@@ -39,6 +39,7 @@ class _HomeState extends State<Home> {
 
   void showAds() {
     myBanner..show();
+    print("showad");
   }
 
   @override
@@ -60,21 +61,25 @@ class _HomeState extends State<Home> {
           elevation: 0,
         ),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              // TODO moze tu logo dac?
-              _HomeButton(AppLocalizations.of(context).translate('to_check'),
-                  Icons.spellcheck, Colors.blue[800], 0, showAds),
-              _HomeButton(
-                  AppLocalizations.of(context).translate('checked_saved'),
-                  Icons.check_circle_outline,
-                  Colors.green[800],
-                  1,
-                  showAds),
-              _HomeButton(AppLocalizations.of(context).translate('to_repeat'),
-                  Icons.repeat, Colors.red[800], 2, showAds),
-            ],
+          child: Padding(
+            // padding: const EdgeInsets.symmetric(vertical: 60),
+            padding: const EdgeInsets.only(bottom: 80),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                // TODO moze tu logo dac?
+                _HomeButton(AppLocalizations.of(context).translate('to_check'),
+                    Icons.spellcheck, Colors.blue[800], 0, showAds),
+                _HomeButton(
+                    AppLocalizations.of(context).translate('checked_saved'),
+                    Icons.check_circle_outline,
+                    Colors.green[800],
+                    1,
+                    showAds),
+                _HomeButton(AppLocalizations.of(context).translate('to_repeat'),
+                    Icons.repeat, Colors.red[800], 2, showAds),
+              ],
+            ),
           ),
         ));
   }
