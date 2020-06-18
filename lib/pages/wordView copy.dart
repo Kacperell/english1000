@@ -11,9 +11,7 @@ class WordView extends StatefulWidget {
   final Color appBarColor;
   final int category_of_state;
   var wordQuery;
-  int idToNextWord;
-  WordView(this.appBarColor, this.category_of_state, this.wordQuery,
-      this.idToNextWord);
+  WordView(this.appBarColor, this.category_of_state, this.wordQuery);
 
   @override
   _WordViewState createState() => _WordViewState();
@@ -21,7 +19,6 @@ class WordView extends StatefulWidget {
 
 class _WordViewState extends State<WordView> {
   double blur = 7.0; //7 blur,0 none
-
   @override
   Widget build(BuildContext context) {
     // final Map arguments = ModalRoute.of(context).settings.arguments as Map;
@@ -150,8 +147,7 @@ class _WordViewState extends State<WordView> {
                         widget.wordQuery['id'],
                         widget.wordQuery['state'],
                         1,
-                        widget.appBarColor,
-                        widget.idToNextWord),
+                        widget.appBarColor),
                     KnowOrNotButton(
                         AppLocalizations.of(context).translate('not_know'),
                         Icons.repeat,
@@ -159,8 +155,7 @@ class _WordViewState extends State<WordView> {
                         widget.wordQuery['id'],
                         widget.wordQuery['state'],
                         2,
-                        widget.appBarColor,
-                        widget.idToNextWord),
+                        widget.appBarColor),
                   ],
                 )
               ],
@@ -180,17 +175,9 @@ class KnowOrNotButton extends StatelessWidget {
   final int _word_id;
   final int _categoryState;
   final int _to_categoryState;
-  int idToNextWord;
   // final int _categoryState;
-  KnowOrNotButton(
-      this._btnText,
-      this._icon,
-      this._color,
-      this._word_id,
-      this._categoryState,
-      this._to_categoryState,
-      this._appBarColorToNextWord,
-      this.idToNextWord);
+  KnowOrNotButton(this._btnText, this._icon, this._color, this._word_id,
+      this._categoryState, this._to_categoryState, this._appBarColorToNextWord);
 
   void emptyshowDialog(context) {
     showDialog(
@@ -217,38 +204,47 @@ class KnowOrNotButton extends StatelessWidget {
           child: RaisedButton.icon(
               onPressed: () async {
                 await WordsProvider.updateWord(_to_categoryState, _word_id);
-                List<Map> wordsQuery =
-                    await WordsProvider.getWordsFromState(_categoryState);
-                if (wordsQuery.isEmpty) {
+                var wordQuery =
+                    await WordsProvider.getOneWordFromState(_categoryState);
+
+                print("-1-");
+                print(wordQuery);
+                print("-1-");
+
+                //   int found=0;// if yeas 1
+                // while(found==0){
+                // }
+
+                if (wordQuery.isEmpty) {
                   emptyshowDialog(context);
                   return;
                 }
 
-                // for (int i = 0; i < wordsQuery.length; i++) {
-                //   print(i);
-                // }
-
-                print('xx1');
-                print(idToNextWord);
-                int inneid = 0;
-                if (_word_id == wordsQuery[0]['id']) {
-                  print('to samo!');
-                  if (wordsQuery.length > inneid + 1) {
-                    print('tebe');
-                    idToNextWord++;
-                  }
+                // hmm ☠ musze brac id id ++az znajdzie
+                //moze for?
+                if (_word_id == wordQuery[0]['id']) {
+                  print("znowu?");
+                  //bierzemy drugie slowo
+                  wordQuery = await WordsProvider.getOneSecondWordFromState(
+                      _categoryState);
                 }
-                print('xx2');
-                print(idToNextWord);
-                print(wordsQuery);
 
-                var nextWord = wordsQuery[idToNextWord];
+                if (wordQuery.isEmpty) {
+                  emptyshowDialog(context);
+                  return;
+                }
+                // TODO jesli sie zmienai slwowno np w znanych dma ze znam to wraca to samo
+                //sprawdzic czy _word_id == wordQuery[0]['id'] jesl itak to
+                //to spradzyc czy sinitej word query[1] jesli tak to idzemy do neigo
+                print("-2-");
+                print(wordQuery);
+                print("-2-");
 
                 await Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (context) => WordView(_appBarColorToNextWord,
-                            _categoryState, nextWord, idToNextWord)));
+                            _categoryState, wordQuery[0])));
               },
               color: _color,
               icon: Icon(
@@ -264,7 +260,6 @@ class KnowOrNotButton extends StatelessWidget {
     );
   }
 }
-
 // class KnowOrNotButton extends StatelessWidget {
 //   final String _btnText;
 //   final IconData _icon;

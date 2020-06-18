@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
 
   void showAds() {
     myBanner..show();
-    print("showad");
+    print("-----sho  wad-----");
   }
 
   @override
@@ -63,7 +63,7 @@ class _HomeState extends State<Home> {
         body: Center(
           child: Padding(
             // padding: const EdgeInsets.symmetric(vertical: 60),
-            padding: const EdgeInsets.only(bottom: 80),
+            padding: const EdgeInsets.only(bottom: 70),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -139,8 +139,8 @@ class _HomeButton extends StatelessWidget {
                   await Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) =>
-                              WordView(_color, _categoryState, wordQuery[0])));
+                          builder: (context) => WordView(
+                              _color, _categoryState, wordQuery[0], 0)));
 
                   // await Navigator.pushNamed(context, '/wordView',
                   //     arguments: {

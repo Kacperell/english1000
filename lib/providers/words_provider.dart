@@ -28,6 +28,13 @@ class WordsProvider {
         'state': 0
       });
       db.insert('Words', {
+        'word': 'Be',
+        'example_sentence': "Will you be my friend?",
+        'pl_translate': 'Być',
+        'pl_example': 'Czy będziesz moim przyjacielem?',
+        'state': 0
+      });
+      db.insert('Words', {
         'word': 'Dog',
         'example_sentence': 'The dog is barking.',
         'pl_translate': 'Pies',
@@ -71,6 +78,24 @@ class WordsProvider {
     return await db
         .rawQuery('SELECT * FROM "Words" where state=$state LIMIT 1');
   }
+
+  static Future getWordsFromState(int state) async {
+    if (db == null) {
+      print("null");
+      await open();
+    }
+    return await db.rawQuery('SELECT * FROM "Words" where state=$state');
+  }
+
+  // static Future getOneSecondWordFromState(int state) async {
+  //   if (db == null) {
+  //     print("null");
+  //     await open();
+  //   }
+  //   print("no ofsert");
+  //   return await db
+  //       .rawQuery('SELECT  * FROM "Words" where state=$state LIMIT 1 OFFSET 1');
+  // }
 
   static Future updateWord(int state, int id) async {
     // await db.update('Notes', word, where: 'id = ?', whereArgs: [word['id']]);
