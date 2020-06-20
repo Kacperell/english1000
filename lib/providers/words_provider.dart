@@ -101,6 +101,10 @@ class WordsProvider {
     // await db.update('Notes', word, where: 'id = ?', whereArgs: [word['id']]);
     await db.rawQuery('UPDATE "Words" set state=$state where id=$id');
   }
+
+  static Future insertWord(Map<String, dynamic> word) async {
+    await db.insert('Words', word);
+  }
 }
 
 //  static Future insertWord(Map<String, dynamic> word) async {
