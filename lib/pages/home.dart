@@ -1,10 +1,8 @@
-// import 'package:english1000/bloc/bloc.dart';
 import 'package:english1000/pages/info.dart';
 import 'package:english1000/pages/wordView.dart';
 import 'package:english1000/providers/words_provider.dart';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import '../ap_localisations.dart';
 
@@ -133,8 +131,6 @@ class _HomeButton extends StatelessWidget {
                   style: TextStyle(fontSize: 20),
                 ),
                 onPressed: () async {
-                  print(AppLocalizations.of(context).translate('to_check'));
-
                   var wordQuery =
                       await WordsProvider.getOneWordFromState(_categoryState);
                   //sort asc in it!
