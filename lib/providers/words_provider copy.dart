@@ -15,6 +15,8 @@ class WordsProvider {
             id integer primary key autoincrement,
             word text not null,
             example_sentence text not null,
+            pl_translate text not null,
+            pl_example text not null,
             state int,
             date_last_touched INTEGER DEFAULT (cast(strftime('%s','now') as int))
           );
@@ -22,31 +24,36 @@ class WordsProvider {
       db.insert('Words', {
         'word': 'Car',
         'example_sentence': "I'm driving my fast car.",
+        'pl_translate': 'Samochód',
+        'pl_example': 'Jadę moim szybkim samochodem.',
         'state': 0
       });
       db.insert('Words', {
         'word': 'Be',
         'example_sentence': "Will you be my friend?",
+        'pl_translate': 'Być',
+        'pl_example': 'Czy będziesz moim przyjacielem?',
         'state': 0
       });
       db.insert('Words', {
         'word': 'Dog',
         'example_sentence': 'The dog is barking.',
+        'pl_translate': 'Pies',
+        'pl_example': 'Pies szczeka',
         'state': 0
       });
       db.insert('Words', {
         'word': 'Family',
         'example_sentence': 'You are like family to me.',
+        'pl_translate': 'Rodzina',
+        'pl_example': 'Jesteś dla mnie jak rodzina.',
         'state': 0
       });
       db.insert('Words', {
         'word': 'And',
         'example_sentence': 'The water was lovely and cold.',
-        'state': 0
-      });
-      db.insert('Words', {
-        'word': 'But',
-        'example_sentence': "I know you're tired but you have to learn.",
+        'pl_translate': 'I',
+        'pl_example': 'Woda była cudowna i zimna.',
         'state': 0
       });
     });
@@ -76,9 +83,8 @@ class WordsProvider {
       print("null");
       await open();
     }
-    return await db.rawQuery(
-        'SELECT * FROM "Words" where state=$state ORDER BY date_last_touched ASC LIMIT 1');
-    // .rawQuery('SELECT * FROM "Words" where state=$state LIMIT 1 ');  // !!!!!!!!!!!!!!!!!
+    return await db
+        .rawQuery('SELECT * FROM "Words" where state=$state LIMIT 1');
   }
 
   static Future getWordsFromState(int state) async {
@@ -87,9 +93,8 @@ class WordsProvider {
       await open();
     }
     // return await db.rawQuery('SELECT * FROM "Words" where state=$state ORDER BY date_last_touched ASC');
-    // DESC
     return await db.rawQuery(
-        'SELECT * FROM "Words" where state=$state ORDER BY date_last_touched ASC');
+        'SELECT * FROM "Words" where state=$state ORDER BY date_last_touched DESC');
   }
 
   // static Future getOneSecondWordFromState(int state) async {

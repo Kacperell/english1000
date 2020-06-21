@@ -16,7 +16,7 @@ class _InfoPageState extends State<InfoPage> {
           title: const Text('English1000🎈'),
         ),
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: ListView(
             children: [
               Icon(

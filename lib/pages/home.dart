@@ -45,15 +45,21 @@ class _HomeState extends State<Home> {
     print("-----sho  wad-----");
   }
 
+  // void setbloc0() async {
+  //   BlocProvider _jakaLiczba = Provider.of<BlocProvider>(context);
+  //   await _jakaLiczba.setBloc(0);
+  // }
+
   @override
   Widget build(BuildContext context) {
-    Locale myLocale = Localizations.localeOf(context);
-    var myLocale2 = AppLocalizations.of(context);
-    print(myLocale);
-    print(myLocale2);
-    BlocProvider _jakaLiczba = Provider.of<BlocProvider>(context);
-    _jakaLiczba.setBloc(
-        0); //ustawiamy na 0 bo ktos moze wrocil z kateogri slowek gdzie caigle klikal ze znam lub nie
+    // Locale myLocale = Localizations.localeOf(context);
+    // var myLocale2 = AppLocalizations.of(context);
+    // print(myLocale);
+    // print(myLocale2);
+    // setbloc0();
+    // BlocProvider _jakaLiczba = Provider.of<BlocProvider>(context);
+    // _jakaLiczba.setBloc(
+    //     0); //ustawiamy na 0 bo ktos moze wrocil z kateogri slowek gdzie caigle klikal ze znam lub nie
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue[900],
@@ -62,6 +68,7 @@ class _HomeState extends State<Home> {
           actions: <Widget>[
             IconButton(
               icon: const Icon(Icons.info_outline),
+              color: Colors.yellowAccent,
               tooltip: 'Info',
               onPressed: () async {
                 await Navigator.push(
@@ -138,6 +145,12 @@ class _HomeButton extends StatelessWidget {
 
                   var wordQuery =
                       await WordsProvider.getOneWordFromState(_categoryState);
+                  //sort asc in it!
+
+                  // ALBO
+                  //  List<Map> wordsQuery = await WordsProvider.getWordsFromState(_categoryState);
+                  // var nextWord = wordsQuery[0];
+
                   if (wordQuery.isEmpty) {
                     showDialog(
                         context: context,

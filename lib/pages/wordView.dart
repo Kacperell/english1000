@@ -30,12 +30,14 @@ class _WordViewState extends State<WordView> {
   @override
   Widget build(BuildContext context) {
     // final Map arguments = ModalRoute.of(context).settings.arguments as Map;
+    BlocProvider _jakaLiczba = Provider.of<BlocProvider>(context);
     return WillPopScope(
       onWillPop: () async {
         await Navigator.pushReplacementNamed(
           context,
           '/',
         );
+        _jakaLiczba.setBloc(0);
         return false;
       },
       child: Scaffold(
@@ -91,12 +93,17 @@ class _WordViewState extends State<WordView> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              widget.wordQuery['pl_translate'],
+                              // widget.wordQuery['pl_translate'],
+                              AppLocalizations.of(context)
+                                  .translate('${widget.wordQuery["word"]}'),
                               style: TextStyle(fontSize: 30),
                             ),
                             SizedBox(height: 10),
                             Flexible(
-                              child: Text(widget.wordQuery['pl_example'],
+                              child: Text(
+                                  // widget.wordQuery['pl_example'],
+                                  AppLocalizations.of(context).translate(
+                                      '${widget.wordQuery["word"]}_sentence'),
                                   style: TextStyle(fontSize: 18)),
                             ),
                           ],
@@ -249,6 +256,7 @@ class KnowOrNotButton extends StatelessWidget {
                   emptyshowDialog(context);
                   return;
                 }
+                print(_jakaLiczba.getBloc());
                 if (_categoryState == _to_categoryState) {
                   _jakaLiczba.setBloc(_jakaLiczba.getBloc() + 1);
                 } else {
@@ -262,7 +270,7 @@ class KnowOrNotButton extends StatelessWidget {
                   return;
                 }
                 // var nextWord = wordsQuery[numberOfNextWord];
-                var nextWord = wordsQuery[numberOfNextWord];
+                var nextWord = wordsQuery[0];
                 await Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
