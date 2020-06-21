@@ -30,7 +30,6 @@ class _WordViewState extends State<WordView> {
   @override
   Widget build(BuildContext context) {
     // final Map arguments = ModalRoute.of(context).settings.arguments as Map;
-
     return WillPopScope(
       onWillPop: () async {
         await Navigator.pushReplacementNamed(
@@ -43,7 +42,7 @@ class _WordViewState extends State<WordView> {
         appBar: AppBar(
           leading: BackButton(color: Colors.white),
           backgroundColor: widget.appBarColor,
-          title: const Text('Most common English words 👅'),
+          title: const Text('English1000🎈'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -72,15 +71,13 @@ class _WordViewState extends State<WordView> {
                           player.play(
                               'mp3/${widget.wordQuery['word']}_sentence.mp3');
                         }),
-                    Text(
-                      AppLocalizations.of(context).translate('example'),
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    Text(
-                      widget.wordQuery['example_sentence'],
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
+                    Flexible(
+                      child: Text(
+                        '${AppLocalizations.of(context).translate('example')} ${widget.wordQuery['example_sentence']}',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                   ],
@@ -98,8 +95,10 @@ class _WordViewState extends State<WordView> {
                               style: TextStyle(fontSize: 30),
                             ),
                             SizedBox(height: 10),
-                            Text(widget.wordQuery['pl_example'],
-                                style: TextStyle(fontSize: 18)),
+                            Flexible(
+                              child: Text(widget.wordQuery['pl_example'],
+                                  style: TextStyle(fontSize: 18)),
+                            ),
                           ],
                         ),
                       ),
@@ -238,12 +237,9 @@ class KnowOrNotButton extends StatelessWidget {
           height: 60,
           child: RaisedButton.icon(
               onPressed: () async {
-                //updated state and make update date!
-
-                print((new DateTime.now()).millisecondsSinceEpoch);
                 var ms = (new DateTime.now()).millisecondsSinceEpoch;
                 var now = (ms / 1000).round();
-                //updated state and make update date!
+                //updated state and date
                 await WordsProvider.updateWord(
                     _to_categoryState, _word_id, now);
 
@@ -253,24 +249,20 @@ class KnowOrNotButton extends StatelessWidget {
                   emptyshowDialog(context);
                   return;
                 }
-                print(wordsQuery);
                 if (_categoryState == _to_categoryState) {
                   _jakaLiczba.setBloc(_jakaLiczba.getBloc() + 1);
                 } else {
                   _jakaLiczba.setBloc(0);
                 }
-
                 int numberOfNextWord = _jakaLiczba.getBloc();
-                print(wordsQuery.length);
-                print(numberOfNextWord);
                 if (wordsQuery.length <= numberOfNextWord) {
                   // nie ten if tylko if spradjazczy czy numberOfNextWord nie jest?? of worQuery.lenght
                   ostanieSlowkoZtejKategoriiDialog(context);
                   _jakaLiczba.setBloc(0);
                   return;
                 }
+                // var nextWord = wordsQuery[numberOfNextWord];
                 var nextWord = wordsQuery[numberOfNextWord];
-
                 await Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(

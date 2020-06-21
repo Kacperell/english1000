@@ -1,4 +1,5 @@
 import 'package:english1000/bloc/bloc.dart';
+import 'package:english1000/pages/info.dart';
 import 'package:english1000/pages/wordView.dart';
 import 'package:english1000/providers/words_provider.dart';
 import 'package:firebase_admob/firebase_admob.dart';
@@ -46,20 +47,30 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    Locale myLocale = Localizations.localeOf(context);
+    var myLocale2 = AppLocalizations.of(context);
+    print(myLocale);
+    print(myLocale2);
     BlocProvider _jakaLiczba = Provider.of<BlocProvider>(context);
     _jakaLiczba.setBloc(
         0); //ustawiamy na 0 bo ktos moze wrocil z kateogri slowek gdzie caigle klikal ze znam lub nie
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue[900],
-          title: const Text('Most common English words 👅'),
+          title: const Text('English1000 👅'),
           automaticallyImplyLeading: false, //hide back button
-
           actions: <Widget>[
             IconButton(
-              icon: const Icon(Icons.settings),
-              tooltip: 'Ustawienia',
-              onPressed: () {},
+              icon: const Icon(Icons.info_outline),
+              tooltip: 'Info',
+              onPressed: () async {
+                await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => InfoPage(),
+                  ),
+                );
+              },
             ),
           ],
           centerTitle: true,

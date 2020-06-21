@@ -6,6 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'ap_localisations.dart';
 import 'bloc/bloc.dart';
+
 //with fireba plsit
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,6 +28,8 @@ class MyAppStart extends StatelessWidget {
         supportedLocales: [
           Locale('en', 'EN'),
           Locale('pl', 'PL'),
+          Locale('de', 'DE'),
+          Locale('es', 'ES'),
         ],
         localizationsDelegates: [
           AppLocalizations.delegate,
@@ -34,14 +37,31 @@ class MyAppStart extends StatelessWidget {
           GlobalWidgetsLocalizations.delegate,
         ],
         localeResolutionCallback: (locale, supportedLocales) {
-          // Check if the current device locale is supported
-          for (var supportedLocale in supportedLocales) {
-            if (supportedLocale.languageCode == locale.languageCode &&
+          if (locale == null) {
+            debugPrint("*language locale is null!!!");
+            return supportedLocales.first;
+          }
+
+          for (Locale supportedLocale in supportedLocales) {
+            if (supportedLocale.languageCode == locale.languageCode ||
                 supportedLocale.countryCode == locale.countryCode) {
+              debugPrint("*language ok $supportedLocale");
               return supportedLocale;
             }
           }
+
+          debugPrint("*language to fallback ${supportedLocales.first}");
+          return supportedLocales.first;
         },
+        // localeResolutionCallback: (locale, supportedLocales) {
+        //   // Check if the current device locale is supported
+        //   for (var supportedLocale in supportedLocales) {
+        //     if (supportedLocale.languageCode == locale.languageCode &&
+        //         supportedLocale.countryCode == locale.countryCode) {
+        //       return supportedLocale;
+        //     }
+        //   }
+        // },
       ),
     );
   }
