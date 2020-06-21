@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:english1000/bloc/bloc.dart';
+// import 'package:english1000/bloc/bloc.dart';
 import 'package:english1000/providers/words_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
@@ -30,14 +30,12 @@ class _WordViewState extends State<WordView> {
   @override
   Widget build(BuildContext context) {
     // final Map arguments = ModalRoute.of(context).settings.arguments as Map;
-    BlocProvider _jakaLiczba = Provider.of<BlocProvider>(context);
     return WillPopScope(
       onWillPop: () async {
         await Navigator.pushReplacementNamed(
           context,
           '/',
         );
-        _jakaLiczba.setBloc(0);
         return false;
       },
       child: Scaffold(
@@ -78,7 +76,7 @@ class _WordViewState extends State<WordView> {
                         '${AppLocalizations.of(context).translate('example')} ${widget.wordQuery['example_sentence']}',
                         style: TextStyle(
                           fontSize: 18,
-                          fontWeight: FontWeight.w500,
+                          // fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
@@ -236,7 +234,6 @@ class KnowOrNotButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BlocProvider _jakaLiczba = Provider.of<BlocProvider>(context);
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.all(4.0),
@@ -252,25 +249,16 @@ class KnowOrNotButton extends StatelessWidget {
 
                 List<Map> wordsQuery =
                     await WordsProvider.getWordsFromState(_categoryState);
+                //albo
+                //  var wordQuery =
+                //                     await WordsProvider.getOneWordFromState(_categoryState);
+
                 if (wordsQuery.isEmpty) {
                   emptyshowDialog(context);
                   return;
                 }
-                print(_jakaLiczba.getBloc());
-                if (_categoryState == _to_categoryState) {
-                  _jakaLiczba.setBloc(_jakaLiczba.getBloc() + 1);
-                } else {
-                  _jakaLiczba.setBloc(0);
-                }
-                int numberOfNextWord = _jakaLiczba.getBloc();
-                if (wordsQuery.length <= numberOfNextWord) {
-                  // nie ten if tylko if spradjazczy czy numberOfNextWord nie jest?? of worQuery.lenght
-                  ostanieSlowkoZtejKategoriiDialog(context);
-                  _jakaLiczba.setBloc(0);
-                  return;
-                }
-                // var nextWord = wordsQuery[numberOfNextWord];
                 var nextWord = wordsQuery[0];
+
                 await Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(

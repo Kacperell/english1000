@@ -1,4 +1,4 @@
-import 'package:english1000/bloc/bloc.dart';
+// import 'package:english1000/bloc/bloc.dart';
 import 'package:english1000/pages/info.dart';
 import 'package:english1000/pages/wordView.dart';
 import 'package:english1000/providers/words_provider.dart';
@@ -45,21 +45,13 @@ class _HomeState extends State<Home> {
     print("-----sho  wad-----");
   }
 
-  // void setbloc0() async {
-  //   BlocProvider _jakaLiczba = Provider.of<BlocProvider>(context);
-  //   await _jakaLiczba.setBloc(0);
-  // }
-
   @override
   Widget build(BuildContext context) {
     // Locale myLocale = Localizations.localeOf(context);
     // var myLocale2 = AppLocalizations.of(context);
     // print(myLocale);
     // print(myLocale2);
-    // setbloc0();
-    // BlocProvider _jakaLiczba = Provider.of<BlocProvider>(context);
-    // _jakaLiczba.setBloc(
-    //     0); //ustawiamy na 0 bo ktos moze wrocil z kateogri slowek gdzie caigle klikal ze znam lub nie
+
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue[900],
