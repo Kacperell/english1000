@@ -17,7 +17,8 @@ class WordsProvider {
             example_sentence text not null,
             pl_translate text not null,
             pl_example text not null,
-            state int
+            state int,
+            date_last_touched INTEGER DEFAULT (cast(strftime('%s','now') as int))
           );
         ''');
       db.insert('Words', {
@@ -46,6 +47,13 @@ class WordsProvider {
         'example_sentence': 'You are like family to me.',
         'pl_translate': 'Rodzina',
         'pl_example': 'Jesteś dla mnie jak rodzina.',
+        'state': 0
+      });
+      db.insert('Words', {
+        'word': 'And',
+        'example_sentence': 'The water was lovely and cold.',
+        'pl_translate': 'I',
+        'pl_example': 'Woda była cudowna i zimna.',
         'state': 0
       });
     });
@@ -84,7 +92,9 @@ class WordsProvider {
       print("null");
       await open();
     }
-    return await db.rawQuery('SELECT * FROM "Words" where state=$state');
+    // return await db.rawQuery('SELECT * FROM "Words" where state=$state ORDER BY date_last_touched ASC');
+    return await db.rawQuery(
+        'SELECT * FROM "Words" where state=$state ORDER BY date_last_touched DESC');
   }
 
   // static Future getOneSecondWordFromState(int state) async {
@@ -97,9 +107,13 @@ class WordsProvider {
   //       .rawQuery('SELECT  * FROM "Words" where state=$state LIMIT 1 OFFSET 1');
   // }
 
-  static Future updateWord(int state, int id) async {
+  //changge word state
+  static Future updateWord(int state, int id, var now) async {
     // await db.update('Notes', word, where: 'id = ?', whereArgs: [word['id']]);
-    await db.rawQuery('UPDATE "Words" set state=$state where id=$id');
+    // await db.rawQuery('UPDATE "Words" set state=$state where id=$id');
+
+    await db.rawQuery(
+        'UPDATE "Words" set state=$state, date_last_touched=$now  where id=$id');
   }
 
   static Future insertWord(Map<String, dynamic> word) async {

@@ -238,14 +238,22 @@ class KnowOrNotButton extends StatelessWidget {
           height: 60,
           child: RaisedButton.icon(
               onPressed: () async {
-                await WordsProvider.updateWord(_to_categoryState, _word_id);
+                //updated state and make update date!
+
+                print((new DateTime.now()).millisecondsSinceEpoch);
+                var ms = (new DateTime.now()).millisecondsSinceEpoch;
+                var now = (ms / 1000).round();
+                //updated state and make update date!
+                await WordsProvider.updateWord(
+                    _to_categoryState, _word_id, now);
+
                 List<Map> wordsQuery =
                     await WordsProvider.getWordsFromState(_categoryState);
                 if (wordsQuery.isEmpty) {
                   emptyshowDialog(context);
                   return;
                 }
-
+                print(wordsQuery);
                 if (_categoryState == _to_categoryState) {
                   _jakaLiczba.setBloc(_jakaLiczba.getBloc() + 1);
                 } else {
