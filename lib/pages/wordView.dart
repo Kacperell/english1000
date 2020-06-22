@@ -107,7 +107,7 @@ class _WordViewState extends State<WordView> {
                     ),
                   ],
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 1),
                 Stack(
                   children: <Widget>[
                     Container(
@@ -155,7 +155,7 @@ class _WordViewState extends State<WordView> {
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 15),
                 ButtonTheme(
                   height: 50,
                   child: RaisedButton.icon(
