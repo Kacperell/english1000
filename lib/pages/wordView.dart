@@ -278,15 +278,16 @@ class KnowOrNotButton extends StatelessWidget {
                 List<Map> wordsQuery =
                     await WordsProvider.getWordsFromState(_categoryState);
                 //albo
-                //  var _wordQuery =
-                //                     await WordsProvider.getOneWordFromState(_categoryState);
+                var wordQuery =
+                    await WordsProvider.getOneWordFromState(_categoryState);
 
 //to chyba awiwat bo jak sie za syzkbo klinie to lipa
                 if (wordsQuery.isEmpty) {
                   emptyshowDialog(context);
                   return;
                 }
-                var nextWord = wordsQuery[0];
+                // var nextWord = wordsQuery[0];
+                var nextWord = wordQuery[0];
 
                 await Navigator.pushReplacement(
                     context,
