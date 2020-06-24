@@ -107,7 +107,7 @@ class _WordViewState extends State<WordView> {
                     ),
                   ],
                 ),
-                SizedBox(height: 1),
+                SizedBox(height: 10),
                 Stack(
                   children: <Widget>[
                     Container(
@@ -116,7 +116,6 @@ class _WordViewState extends State<WordView> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              // widget._wordQuery['pl_translate'],
                               AppLocalizations.of(context)
                                   .translate('${widget._wordQuery["word"]}'),
                               style: TextStyle(fontSize: 30),
@@ -126,7 +125,6 @@ class _WordViewState extends State<WordView> {
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Text(
-                                    // widget._wordQuery['pl_example'],
                                     AppLocalizations.of(context).translate(
                                         '${widget._wordQuery["word"]}_sentence'),
                                     style: TextStyle(fontSize: 18)),
