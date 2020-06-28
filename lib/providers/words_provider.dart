@@ -417,165 +417,265 @@ class WordsProvider {
       //   'word': "Well",
       //   'example_sentence': "The whole team played well.",
       // });
+      // db.insert('Words', {
+      //   'word': "Only",
+      //   'example_sentence': "I was only joking!",
+      // });
+      // db.insert('Words', {
+      //   'word': "Those",
+      //   'example_sentence': "Those books are very old.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Tell",
+      //   'example_sentence': "Can you tell him to turn down the music?",
+      // });
+      // db.insert('Words', {
+      //   'word': "Very",
+      //   'example_sentence': "I am very happy.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Even",
+      //   'example_sentence': "I don't even know where she is.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Back",
+      //   'example_sentence': "Put that book back on the shelf.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Any",
+      //   'example_sentence': "Have you any cheese?",
+      // });
+      // db.insert('Words', {
+      //   'word': "Good",
+      //   'example_sentence': "That was a really good price.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Woman",
+      //   'example_sentence': "She is a beautiful woman.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Through",
+      //   'example_sentence': "I went through the forest at night.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Us",
+      //   'example_sentence': "He drove us to the cinema.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Life",
+      //   'example_sentence': "It was the best day of my life.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Child",
+      //   'example_sentence': "I remember her mainly as a child.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Work",
+      //   'example_sentence': "He is still at work.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Down",
+      //   'example_sentence': "Don't look down!",
+      // });
+      // db.insert('Words', {
+      //   'word': "May",
+      //   'example_sentence': "May I come in?",
+      // });
+      // db.insert('Words', {
+      //   'word': "After",
+      //   'example_sentence': "They went for a walk after work.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Should",
+      //   'example_sentence': "You should go to sleep.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Call",
+      //   'example_sentence': "I will call you tomorrow.",
+      // });
+      // db.insert('Words', {
+      //   'word': "World",
+      //   'example_sentence': "I would like to explore the whole world.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Over",
+      //   'example_sentence': "The lamp hangs over the table.",
+      // });
+      // db.insert('Words', {
+      //   'word': "School",
+      //   'example_sentence': "You will be late for school.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Still",
+      //   'example_sentence': "He is still in the store.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Try",
+      //   'example_sentence': "I will try to learn all the words from this app.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Last",
+      //   'example_sentence': "I don't understand that last sentence.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Ask",
+      //   'example_sentence': "Can I ask you a question?",
+      // });
+      // db.insert('Words', {
+      //   'word': "Need",
+      //   'example_sentence': "I need a short break.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Feel",
+      //   'example_sentence': "How do you feel?",
+      // });
+      // db.insert('Words', {
+      //   'word': "Three",
+      //   'example_sentence': "I have three sisters.",
+      // });
+      // db.insert('Words', {
+      //   'word': "State",
+      //   'example_sentence': "His car is in a terrible state.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Never",
+      //   'example_sentence': "She never goes to bed before midnight.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Become",
+      //   'example_sentence': "Her life has become very difficult",
+      // });
+      // db.insert('Words', {
+      //   'word': "High",
+      //   'example_sentence': "How high is that building?",
+      // });
+      // db.insert('Words', {
+      //   'word': "Really",
+      //   'example_sentence': "She doesn't really want to go",
+      // });
+      // db.insert('Words', {
+      //   'word': "Something",
+      //   'example_sentence': "I have something for you.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Most",
+      //   'example_sentence': "Most people don't even know about it.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Another",
+      //   'example_sentence': "My car is much faster than yours.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Much",
+      //   'example_sentence': "My car is much faster than yours.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Own",
+      //   'example_sentence': "I would like to buy my own apartment.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Leave",
+      //   'example_sentence': "Don't leave me now, please.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Put",
+      //   'example_sentence': "He put the phone on the table.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Old",
+      //   'example_sentence': "She says she's too old to go to parties.",
+      // });
+      // db.insert('Words', {
+      //   'word': "While",
+      //   'example_sentence': "I don't want you to drive while you're so tired.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Mean",
+      //   'example_sentence': "What do you mean?",
+      // });
+      // db.insert('Words', {
+      //   'word': "Keep",
+      //   'example_sentence': "You can keep the book. I have another copy.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Student",
+      //   'example_sentence': "I have 30 students in my class.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Why",
+      //   'example_sentence': "Why are you so sad?",
+      // });
+      // db.insert('Words', {
+      //   'word': "Let",
+      //   'example_sentence': "Let me love you.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Great",
+      //   'example_sentence': "It is a great idea.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Same",
+      //   'example_sentence': "We have the same shoes.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Big",
+      //   'example_sentence': "Diet makes a big difference to health.",
+      // });
       db.insert('Words', {
-        'word': "Only",
-        'example_sentence': "I was only joking!",
+        'word': "Group",
+        'example_sentence': "I have a group of friends.",
       });
       db.insert('Words', {
-        'word': "Those",
-        'example_sentence': "Those books are very old.",
+        'word': "Begin",
+        'example_sentence': "I always begin training with a warm-up.",
       });
       db.insert('Words', {
-        'word': "Tell",
-        'example_sentence': "Can you tell him to turn down the music?",
+        'word': "Seem",
+        'example_sentence': "You seem sad, what's happened?",
       });
       db.insert('Words', {
-        'word': "Very",
-        'example_sentence': "I am very happy.",
+        'word': "Country",
+        'example_sentence': "They drove around the country.",
       });
       db.insert('Words', {
-        'word': "Even",
-        'example_sentence': "I don't even know where she is.",
+        'word': "Help",
+        'example_sentence': "He helped me with my homework.",
       });
       db.insert('Words', {
-        'word': "Back",
-        'example_sentence': "Put that book back on the shelf.",
+        'word': "Talk",
+        'example_sentence': "We need to talk.",
       });
       db.insert('Words', {
-        'word': "Any",
-        'example_sentence': "Have you any cheese?",
+        'word': "Where",
+        'example_sentence': "Where is my computer?",
       });
       db.insert('Words', {
-        'word': "Good",
-        'example_sentence': "That was a really good price.",
+        'word': "Turn",
+        'example_sentence': "In 100 meters, turn right.",
       });
       db.insert('Words', {
-        'word': "Woman",
-        'example_sentence': "She is a beautiful woman.",
+        'word': "Problem",
+        'example_sentence': "I have a problem with repairing the bike.",
       });
       db.insert('Words', {
-        'word': "Through",
-        'example_sentence': "I went through the forest at night.",
+        'word': "Every",
+        'example_sentence': "He answered every question.",
       });
       db.insert('Words', {
-        'word': "Us",
-        'example_sentence': "He drove us to the cinema.",
+        'word': "Start",
+        'example_sentence': "This is a great to start to learn the English language.",
       });
       db.insert('Words', {
-        'word': "Life",
-        'example_sentence': "It was the best day of my life.",
+        'word': "Hand",
+        'example_sentence': "He had a knife in his hand.🧤",
       });
       db.insert('Words', {
-        'word': "Child",
-        'example_sentence': "I remember her mainly as a child.",
+        'word': "Might",
+        'example_sentence': "I might do it, but you have to help me.",
       });
       db.insert('Words', {
-        'word': "Work",
-        'example_sentence': "He is still at work.",
-      });
-      db.insert('Words', {
-        'word': "Down",
-        'example_sentence': "Don't look down!",
-      });
-      db.insert('Words', {
-        'word': "May",
-        'example_sentence': "May I come in?",
-      });
-      db.insert('Words', {
-        'word': "After",
-        'example_sentence': "They went for a walk after work.",
-      });
-      db.insert('Words', {
-        'word': "Should",
-        'example_sentence': "You should go to sleep.",
-      });
-      db.insert('Words', {
-        'word': "Call",
-        'example_sentence': "I will call you tomorrow.",
-      });
-      db.insert('Words', {
-        'word': "World",
-        'example_sentence': "I would like to explore the whole world.",
-      });
-      db.insert('Words', {
-        'word': "Over",
-        'example_sentence': "The lamp hangs over the table.",
-      });
-      db.insert('Words', {
-        'word': "School",
-        'example_sentence': "You will be late for school.",
-      });
-      db.insert('Words', {
-        'word': "Still",
-        'example_sentence': "He is still in the store.",
-      });
-      db.insert('Words', {
-        'word': "Try",
-        'example_sentence': "I will try to learn all the words from this app.",
-      });
-      db.insert('Words', {
-        'word': "Last",
-        'example_sentence': "I don't understand that last sentence.",
-      });
-      db.insert('Words', {
-        'word': "Ask",
-        'example_sentence': "Can I ask you a question?",
-      });
-      db.insert('Words', {
-        'word': "Need",
-        'example_sentence': "I need a short break.",
-      });
-      db.insert('Words', {
-        'word': "Feel",
-        'example_sentence': "How do you feel?",
-      });
-      db.insert('Words', {
-        'word': "Three",
-        'example_sentence': "I have three sisters.",
-      });
-      db.insert('Words', {
-        'word': "State",
-        'example_sentence': "His car is in a terrible state.",
-      });
-      db.insert('Words', {
-        'word': "Never",
-        'example_sentence': "She never goes to bed before midnight.",
-      });
-      db.insert('Words', {
-        'word': "Become",
-        'example_sentence': "Her life has become very difficult",
-      });
-      db.insert('Words', {
-        'word': "High",
-        'example_sentence': "How high is that building?",
-      });
-      db.insert('Words', {
-        'word': "Really",
-        'example_sentence': "She doesn't really want to go",
-      });
-      db.insert('Words', {
-        'word': "Something",
-        'example_sentence': "I have something for you.",
-      });
-      db.insert('Words', {
-        'word': "Most",
-        'example_sentence': "Most people don't even know about it.",
-      });
-      db.insert('Words', {
-        'word': "Another",
-        'example_sentence': "My car is much faster than yours.",
-      });
-      db.insert('Words', {
-        'word': "Much",
-        'example_sentence': "My car is much faster than yours.",
-      });
-      db.insert('Words', {
-        'word': "Own",
-        'example_sentence': "I would like to buy my own apartment.",
-      });
-      db.insert('Words', {
-        'word': "Leave",
-        'example_sentence': "Don't leave me now, please.",
+        'word': "Show",
+        'example_sentence': "Show me what you drew.",
       });
 
       /////////////////
@@ -617,7 +717,4 @@ class WordsProvider {
         'UPDATE "Words" set state=$state, date_last_touched=$now  where id=$id');
   }
 
-  // static Future insertWord(Map<String, dynamic> word) async {
-  //   await db.insert('Words', word);
-  // }
 }

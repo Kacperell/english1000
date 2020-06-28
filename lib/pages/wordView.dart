@@ -133,7 +133,8 @@ class _WordViewState extends State<WordView> {
                           ],
                         ),
                       ),
-                      height: 130.0,
+                      height: 150.0,
+                      // height: 130.0,
                     ),
                     Center(
                       child: ClipRect(
@@ -145,7 +146,7 @@ class _WordViewState extends State<WordView> {
                           child: Container(
                             alignment: Alignment.center,
                             width: 400.0,
-                            height: 130.0,
+                            height: 150.0,
                             color: Colors.black.withOpacity(0),
                           ),
                         ),
