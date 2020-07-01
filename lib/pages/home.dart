@@ -116,7 +116,7 @@ class _HomeButton extends StatelessWidget {
           future: WordsProvider.getCount(_categoryState),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
-              if (_categoryState == 0 && snapshot.data < 10) {
+              if (_categoryState == 0 && snapshot.data < 150) {
                 // pozniej zrobic ze gdy bedize mniejszy od 988
                 showAds();
               }
