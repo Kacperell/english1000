@@ -621,61 +621,69 @@ class WordsProvider {
       //   'word': "Big",
       //   'example_sentence': "Diet makes a big difference to health.",
       // });
-      db.insert('Words', {
-        'word': "Group",
-        'example_sentence': "I have a group of friends.",
-      });
-      db.insert('Words', {
-        'word': "Begin",
-        'example_sentence': "I always begin training with a warm-up.",
-      });
-      db.insert('Words', {
-        'word': "Seem",
-        'example_sentence': "You seem sad, what's happened?",
-      });
-      db.insert('Words', {
-        'word': "Country",
-        'example_sentence': "They drove around the country.",
-      });
-      db.insert('Words', {
-        'word': "Help",
-        'example_sentence': "He helped me with my homework.",
-      });
-      db.insert('Words', {
-        'word': "Talk",
-        'example_sentence': "We need to talk.",
-      });
-      db.insert('Words', {
-        'word': "Where",
-        'example_sentence': "Where is my computer?",
-      });
-      db.insert('Words', {
-        'word': "Turn",
-        'example_sentence': "In 100 meters, turn right.",
-      });
-      db.insert('Words', {
-        'word': "Problem",
-        'example_sentence': "I have a problem with repairing the bike.",
-      });
-      db.insert('Words', {
-        'word': "Every",
-        'example_sentence': "He answered every question.",
-      });
-      db.insert('Words', {
-        'word': "Start",
-        'example_sentence': "This is a great to start to learn the English language.",
-      });
-      db.insert('Words', {
-        'word': "Hand",
-        'example_sentence': "He had a knife in his hand.🧤",
-      });
-      db.insert('Words', {
-        'word': "Might",
-        'example_sentence': "I might do it, but you have to help me.",
-      });
+      // db.insert('Words', {
+      //   'word': "Group",
+      //   'example_sentence': "I have a group of friends.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Begin",
+      //   'example_sentence': "I always begin training with a warm-up.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Seem",
+      //   'example_sentence': "You seem sad, what's happened?",
+      // });
+      // db.insert('Words', {
+      //   'word': "Country",
+      //   'example_sentence': "They drove around the country.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Help",
+      //   'example_sentence': "He helped me with my homework.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Talk",
+      //   'example_sentence': "We need to talk.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Where",
+      //   'example_sentence': "Where is my computer?",
+      // });
+      // db.insert('Words', {
+      //   'word': "Turn",
+      //   'example_sentence': "In 100 meters, turn right.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Problem",
+      //   'example_sentence': "I have a problem with repairing the bike.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Every",
+      //   'example_sentence': "He answered every question.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Start",
+      //   'example_sentence': "This is a great to start to learn the English language.",
+      // });
+      // db.insert('Words', {
+      //   'word': "Hand",
+      //   'example_sentence': "He had a knife in his hand.🧤",
+      // });
+      // db.insert('Words', {
+      //   'word': "Might",
+      //   'example_sentence': "I might do it, but you have to help me.",
+      // });
       db.insert('Words', {
         'word': "Show",
         'example_sentence': "Show me what you drew.",
+      });
+      db.insert('Words', {
+        'word': "Part",
+        'example_sentence': "It is only part of the problem.",
+      });
+      db.insert('Words', {
+        'word': "Against",
+        'example_sentence': "Team 'a' is playing against team 'b'.",
       });
 
       /////////////////

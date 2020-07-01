@@ -348,5 +348,9 @@
     "Might": "Móc, mógłby, moc, potęga",
     "Might_sentence": "Mógłbym to zrobić, ale musisz mi pomóc.",
     "Show": "Pokazać",
-    "Show_sentence": "Pokaż mi co narysowałeś."
+    "Show_sentence": "Pokaż mi co narysowałeś.",
+    "Part": "Część, rola",
+    "Part_sentence": "To tylko część problemu.",
+    "Against": "Przeciwko, przeciw, wbrew",
+    "Against_sentence": "Drużyna 'a' gra przeciwko drużynie 'b'.",
 }
