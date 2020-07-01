@@ -49,6 +49,8 @@ class _HomeState extends State<Home> {
     // var myLocale2 = AppLocalizations.of(context);
     // print(myLocale);
     // print(myLocale2);
+    Locale myLocale = Localizations.localeOf(context);
+    print(myLocale);
 
     return Scaffold(
         appBar: AppBar(

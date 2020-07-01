@@ -27,11 +27,14 @@ class MyAppStart extends StatelessWidget {
         Locale('de', 'DE'),
         Locale('es', 'ES'),
       ],
+
       localizationsDelegates: [
         AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
       ],
+
       localeResolutionCallback: (locale, supportedLocales) {
         if (locale == null) {
           debugPrint("*language locale is null!!!");
@@ -49,6 +52,7 @@ class MyAppStart extends StatelessWidget {
         debugPrint("*language to fallback ${supportedLocales.first}");
         return supportedLocales.first;
       },
+
       // localeResolutionCallback: (locale, supportedLocales) {
       //   // Check if the current device locale is supported
       //   for (var supportedLocale in supportedLocales) {
