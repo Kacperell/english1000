@@ -352,5 +352,11 @@
     "Part": "Część, rola",
     "Part_sentence": "To tylko część problemu.",
     "Against": "Przeciwko, przeciw, wbrew",
-    "Against_sentence": "Drużyna 'a' gra przeciwko drużynie 'b'."
+    "Against_sentence": "Drużyna 'a' gra przeciwko drużynie 'b'.",
+    "Place": "Miejsce",
+    "Place_sentence": "To miejsce jest cudowne!",
+    "Such": "Taki",
+    "Such_sentence": "Nie powiedziałem nic takiego.",
+    "Again": "Ponownie, znowu",
+    "Again_sentence": "Znowu muszę iść do dentysty."
 }

@@ -686,6 +686,18 @@ class WordsProvider {
         'word': "Against",
         'example_sentence': "Team 'a' is playing against team 'b'.",
       });
+      db.insert('Words', {
+        'word': "Place",
+        'example_sentence': "This place is wonderful!",
+      });
+      db.insert('Words', {
+        'word': "Such",
+        'example_sentence': "I didn't say any such thing.",
+      });
+      db.insert('Words', {
+        'word': "Again",
+        'example_sentence': "I have to go to the dentist again.",
+      });
 
       /////////////////
     });
