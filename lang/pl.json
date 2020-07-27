@@ -376,7 +376,7 @@
     "Program": "Program, audycja, zaprogramować",
     "Program_sentence": "Uczymy się, jak świadomie programować własne życie.",
     "Hear": "Słyszeć",
-    "Hear_sentence": "Uczymy się, jak świadomie programować własne życie.",
+    "Hear_sentence": "Słyszałeś to?",
     "Question": "Pytanie, zagadnienie",
     "Question_sentence": "Macie jakieś pytania?",
     "During": "Podczas",
@@ -394,7 +394,7 @@
     "Off": "od(kogoś), z dala, poza, wyłączony",
     "Off_sentence": "Dostałem to od niego.",
     "Always": "Zawsze, ciągle",
-    "Always_sentence": "Dostałem to od niego.",
+    "Always_sentence": "Jesteś zawsze spóźniony",
     "Move": "Ruszać się, przenosić",
     "Move_sentence": "Nie ruszaj tego krzesła.",
     "Night": "Noc",
@@ -480,5 +480,7 @@
     "Four": "Cztery",
     "Four_sentence": "Mam czterech braci.",
     "Head": "Głowa, szef",
-    "Head_sentence": "Ona ma czapke na głowie."
+    "Head_sentence": "Ona ma czapke na głowie.",
+    "Far": "Daleko, z dala",
+    "Far_sentence": "Nie zaszedł daleko.",
 }
