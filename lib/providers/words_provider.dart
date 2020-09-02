@@ -1025,13 +1025,48 @@ class WordsProvider {
         'word': "Game",
         'example_sentence': "Let’s play a game.",
       });
+      db.insert('Words', {
+        'word': "Often",
+        'example_sentence': "How often do you have your hair cut?",
+      });
+      db.insert('Words', {
+        'word': "Yet",
+        'example_sentence': "He’s not yet home.",
+      });
+      db.insert('Words', {
+        'word': "Line",
+        'example_sentence': "Draw a straight line.",
+      });
+      db.insert('Words', {
+        'word': "Political",
+        'example_sentence': "I stay away from political discussions.",
+      });
+      db.insert('Words', {
+        'word': "End",
+        'example_sentence': "It's not the end of the world.",
+      });
+      db.insert('Words', {
+        'word': "Among",
+        'example_sentence': "They have a nice house among trees.",
+      });
+      db.insert('Words', {
+        'word': "Ever",
+        'example_sentence': "Have you ever been in rome?",
+      });
+      db.insert('Words', {
+        'word': "Stand",
+        'example_sentence': "He can stand on his hands.",
+      });
+      db.insert('Words', {
+        'word': "Bad",
+        'example_sentence': "Have I come at a bad time for you?",
+      });
 
       /////////////////
     });
 
     /////////////////
   }
-
 
   static Future getCount(int state) async {
     if (db == null) {
