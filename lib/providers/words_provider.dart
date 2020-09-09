@@ -1061,6 +1061,293 @@ class WordsProvider {
         'word': "Bad",
         'example_sentence': "Have I come at a bad time for you?",
       });
+      db.insert('Words', {
+        'word': "Lose",
+        'example_sentence': "You have nothing to lose.",
+      });
+      db.insert('Words', {
+        'word': "However",
+        'example_sentence':
+            "I want to buy this shirt, however, I don't have money.",
+      });
+      db.insert('Words', {
+        'word': "Member",
+        'example_sentence': "He is a member of our team.",
+      });
+      db.insert('Words', {
+        'word': "Pay",
+        'example_sentence': "She paid for our dinner.",
+      });
+      db.insert('Words', {
+        'word': "Law",
+        'example_sentence': "They were taken to court for breaking the law.",
+      });
+      db.insert('Words', {
+        'word': "Meet",
+        'example_sentence': "I'll meet you outside the theatre at eight.",
+      });
+      db.insert('Words', {
+        'word': "City",
+        'example_sentence': "This is the city that never sleeps.",
+      });
+      db.insert('Words', {
+        'word': "Almost",
+        'example_sentence': "He almost dropped the bottle.",
+      });
+      db.insert('Words', {
+        'word': "Include",
+        'example_sentence': "The price includes shipping cost.",
+      });
+      db.insert('Words', {
+        'word': "Continue",
+        'example_sentence': "He was unable to continue with his job.",
+      });
+      db.insert('Words', {
+        'word': "Set",
+        'example_sentence': "She set the flowers on the table.",
+      });
+      db.insert('Words', {
+        'word': "Later",
+        'example_sentence': "I’ll finish it later.",
+      });
+      db.insert('Words', {
+        'word': "Community",
+        'example_sentence': "It caused problems for the wider community.",
+      });
+      db.insert('Words', {
+        'word': "Name",
+        'example_sentence': "What’s your name?",
+      });
+      db.insert('Words', {
+        'word': "Five",
+        'example_sentence':
+            "I can give you five reasons why you should learn English.",
+      });
+      db.insert('Words', {
+        'word': "Once",
+        'example_sentence': "You only live once.",
+      });
+      db.insert('Words', {
+        'word': "White",
+        'example_sentence': "He put on white shoes and made them dirty.",
+      });
+      db.insert('Words', {
+        'word': "Least",
+        'example_sentence':
+            "She spends the least amount of time in the office.",
+      });
+      db.insert('Words', {
+        'word': "President",
+        'example_sentence': "He was elected president.",
+      });
+      db.insert('Words', {
+        'word': "Learn",
+        'example_sentence': "I'm learning English.",
+      });
+      db.insert('Words', {
+        'word': "Real",
+        'example_sentence': "It doesn't seem to be real.",
+      });
+      db.insert('Words', {
+        'word': "Change",
+        'example_sentence': "We wanted to change the world.",
+      });
+      db.insert('Words', {
+        'word': "Team",
+        'example_sentence': "She plays for the second team.",
+      });
+      db.insert('Words', {
+        'word': "Minute",
+        'example_sentence': "She’s laughing every minute of every day.",
+      });
+      db.insert('Words', {
+        'word': "Best",
+        'example_sentence': "This is the best pizza I have eaten.",
+      });
+      db.insert('Words', {
+        'word': "Several",
+        'example_sentence': "I tried it several times.",
+      });
+      db.insert('Words', {
+        'word': "Idea",
+        'example_sentence': "He had a brilliant idea.",
+      });
+      db.insert('Words', {
+        'word': "Kid",
+        'example_sentence': "I loved that toy when I was a kid.",
+      });
+      db.insert('Words', {
+        'word': "Body",
+        'example_sentence': "She has a beautiful body.",
+      });
+      db.insert('Words', {
+        'word': "Information",
+        'example_sentence': "I'd like to get information about the course.",
+      });
+      db.insert('Words', {
+        'word': "Nothing",
+        'example_sentence': "You have nothing more to say?",
+      });
+      db.insert('Words', {
+        'word': "Ago",
+        'example_sentence': "Mom came home 20 minutes ago.",
+      });
+      db.insert('Words', {
+        'word': "Lead",
+        'example_sentence': "He leads me to my goal.",
+      });
+      db.insert('Words', {
+        'word': "Social",
+        'example_sentence': "Rising unemployment causes many social problems.",
+      });
+      db.insert('Words', {
+        'word': "Understand",
+        'example_sentence': "I didn't understand properly what she said.",
+      });
+      db.insert('Words', {
+        'word': "Whether",
+        'example_sentence': "I'll see whether she's at home.",
+      });
+      db.insert('Words', {
+        'word': "Watch",
+        'example_sentence': "I watched a man with an expensive watch.",
+      });
+      db.insert('Words', {
+        'word': "Together",
+        'example_sentence': "We can move this table together.",
+      });
+      db.insert('Words', {
+        'word': "Follow",
+        'example_sentence':
+            "I don't follow many celebrities on Instagram anymore.",
+      });
+      db.insert('Words', {
+        'word': "Parent",
+        'example_sentence': "My parents care very much about me.",
+      });
+      db.insert('Words', {
+        'word': "Stop",
+        'example_sentence': "Please stop the car.",
+      });
+      db.insert('Words', {
+        'word': "Face",
+        'example_sentence': "He had a big smile on his face.",
+      });
+      db.insert('Words', {
+        'word': "Anything",
+        'example_sentence': "Have you anything to say?",
+      });
+      db.insert('Words', {
+        'word': "Create",
+        'example_sentence': "Artists need space to create.",
+      });
+      db.insert('Words', {
+        'word': "Public",
+        'example_sentence': "I never use public toilets.",
+      });
+      db.insert('Words', {
+        'word': "Already",
+        'example_sentence': "I never use public toilets.",
+      });
+      db.insert('Words', {
+        'word': "Speak",
+        'example_sentence': "Could you speak a little louder?",
+      });
+      db.insert('Words', {
+        'word': "Others",
+        'example_sentence': "You have to tell the others what happened.",
+      });
+      db.insert('Words', {
+        'word': "Read",
+        'example_sentence': "What newspapers or magazines do you read?",
+      });
+      db.insert('Words', {
+        'word': "Level",
+        'example_sentence': "You need to lower your blood sugar level.",
+      });
+      db.insert('Words', {
+        'word': "Allow",
+        'example_sentence': "Do you allow your kids to play outside the house?",
+      });
+      db.insert('Words', {
+        'word': "Add",
+        'example_sentence': "Add the flour to the eggs, stirring continuously.",
+      });
+      db.insert('Words', {
+        'word': "Office",
+        'example_sentence': "Welcome to my office.",
+      });
+      db.insert('Words', {
+        'word': "Spend",
+        'example_sentence': "How much do you spend on food?",
+      });
+      db.insert('Words', {
+        'word': "Door",
+        'example_sentence': "Did you lock the door?",
+      });
+      db.insert('Words', {
+        'word': "Health",
+        'example_sentence': "Smoking is bad for your health.",
+      });
+      db.insert('Words', {
+        'word': "Person",
+        'example_sentence': "She's a very nice person.",
+      });
+      db.insert('Words', {
+        'word': "Sure",
+        'example_sentence':
+            "You can't be sure that this will never happen again.",
+      });
+      db.insert('Words', {
+        'word': "War",
+        'example_sentence': "The two countries had been at war for six years.",
+      });
+      db.insert('Words', {
+        'word': "History",
+        'example_sentence': "I teach history at a local school.",
+      });
+      db.insert('Words', {
+        'word': "Party",
+        'example_sentence': "Are you going to her party tonight?",
+      });
+      db.insert('Words', {
+        'word': "Within",
+        'example_sentence': "Sold out within two hours.",
+      });
+      db.insert('Words', {
+        'word': "Grow",
+        'example_sentence': "Hair grows 1 cm per month.",
+      });
+      db.insert('Words', {
+        'word': "Result",
+        'example_sentence':
+            "Wieża zawaliła się w wyniku naruszenia bezpieczeństwa.",
+      });
+      db.insert('Words', {
+        'word': "Open",
+        'example_sentence': "Leave the door open.",
+      });
+      db.insert('Words', {
+        'word': "Morning",
+        'example_sentence': "It’s such a beautiful morning!",
+      });
+      db.insert('Words', {
+        'word': "Walk",
+        'example_sentence': "Let's go for a walk.",
+      });
+      db.insert('Words', {
+        'word': "Reason",
+        'example_sentence':
+            "The only reason she comes here is to read the paper.",
+      });
+      db.insert('Words', {
+        'word': "Low",
+        'example_sentence': "I need a low sum of money.",
+      });
+      db.insert('Words', {
+        'word': "Win",
+        'example_sentence': "He wants to win a tennis tournament.",
+      });
 
       /////////////////
     });

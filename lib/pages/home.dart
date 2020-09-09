@@ -18,10 +18,12 @@ class _HomeState extends State<Home> {
     keywords: <String>['flutterio', 'beautiful apps'],
     contentUrl: 'https://flutter.io',
     childDirected: false,
+    // testDevices: null // Android emulators are considered test devices
     testDevices: <String>[], // Android emulators are considered test devices
   );
 
   BannerAd myBanner = BannerAd(
+    // adUnitId:'ca-app-pub-9477426267530319/7023842924',
     adUnitId: BannerAd.testAdUnitId,
     size: AdSize.fullBanner,
     targetingInfo: targetingInfo,
