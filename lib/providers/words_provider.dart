@@ -1348,6 +1348,58 @@ class WordsProvider {
         'word': "Win",
         'example_sentence': "He wants to win a tennis tournament.",
       });
+      db.insert('Words', {
+        'word': "Research",
+        'example_sentence': "She carried out some research on pollution.",
+      });
+      db.insert('Words', {
+        'word': "Girl",
+        'example_sentence': "This girl is so beautiful.",
+      });
+      db.insert('Words', {
+        'word': "Guy",
+        'example_sentence': "He is a nice guy.",
+      });
+      db.insert('Words', {
+        'word': "Early",
+        'example_sentence': "She went home 20 minutes early.",
+      });
+      db.insert('Words', {
+        'word': "Food",
+        'example_sentence': "We need food and water.",
+      });
+      db.insert('Words', {
+        'word': "Moment",
+        'example_sentence': "We had to wait until the right moment came.",
+      });
+      db.insert('Words', {
+        'word': "Himself",
+        'example_sentence': "He bought himself a new bike.",
+      });
+      db.insert('Words', {
+        'word': "Air",
+        'example_sentence': "He celebrated by tossing his hat high in the air.",
+      });
+      db.insert('Words', {
+        'word': "Teacher",
+        'example_sentence': "She works as a teacher in a primary school.",
+      });
+      db.insert('Words', {
+        'word': "Force",
+        'example_sentence': "He was thrown backward by the force of the explosion.",
+      });
+      db.insert('Words', {
+        'word': "Offer",
+        'example_sentence': "She put him an offer he could not refuse.",
+      });
+      db.insert('Words', {
+        'word': "Enough",
+        'example_sentence': "Is there enough pizza for everyone?",
+      });
+      db.insert('Words', {
+        'word': "Education",
+        'example_sentence': "The lack of education prevented him from finding a better-paid job.",
+      });
 
       /////////////////
     });
