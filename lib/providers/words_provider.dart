@@ -1400,6 +1400,38 @@ class WordsProvider {
         'word': "Education",
         'example_sentence': "The lack of education prevented him from finding a better-paid job.",
       });
+      db.insert('Words', {
+        'word': "Across",
+        'example_sentence': "I ran across the street.",
+      }); 
+      db.insert('Words', {
+        'word': "Although",
+        'example_sentence': "Although the sun was shining it wasn't that warm.",
+      });
+       db.insert('Words', {
+        'word': "Remember",
+        'example_sentence': "I remember you fell off the roof on your birthday.",
+      });
+       db.insert('Words', {
+        'word': "Foot",
+        'example_sentence': "We decided to go there on foot.",
+      });
+       db.insert('Words', {
+        'word': "Second",
+        'example_sentence': "I will give you a second chance.",
+      });
+       db.insert('Words', {
+        'word': "Boy",
+        'example_sentence': "This boy has blonde curly hair.",
+      });
+       db.insert('Words', {
+        'word': "Maybe",
+        'example_sentence': "I can't come today, maybe we could meet tomorrow?",
+      });
+       db.insert('Words', {
+        'word': "Toward",
+        'example_sentence': "I can't come today, maybe we could meet tomorrow?",
+      });
 
       /////////////////
     });
