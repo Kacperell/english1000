@@ -1430,7 +1430,23 @@ class WordsProvider {
       });
        db.insert('Words', {
         'word': "Toward",
-        'example_sentence': "I can't come today, maybe we could meet tomorrow?",
+        'example_sentence': "He ran towards her.",
+      });
+       db.insert('Words', {
+        'word': "Able",
+        'example_sentence': "Are you able to help me with my English homework tomorrow?",
+      });
+       db.insert('Words', {
+        'word': "Age",
+        'example_sentence': "She's tall for her age.",
+      });
+       db.insert('Words', {
+        'word': "Policy",
+        'example_sentence': "They share views on social policy.",
+      });
+       db.insert('Words', {
+        'word': "Everything",
+        'example_sentence': "He'll bring everything you need.",
       });
 
       /////////////////
