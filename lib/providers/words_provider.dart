@@ -1448,6 +1448,187 @@ class WordsProvider {
         'word': "Everything",
         'example_sentence': "He'll bring everything you need.",
       });
+       db.insert('Words', {
+        'word': "Love",
+        'example_sentence': "He's in love with her.",
+      });
+       db.insert('Words', {
+        'word': "Process",
+        'example_sentence': "He began the process of rebuilding the team.",
+      });
+       db.insert('Words', {
+        'word': "Music",
+        'example_sentence': "Excuse me, could you turn down the music?",
+      });
+       db.insert('Words', {
+        'word': "Including",
+        'example_sentence': "The company will pay for your trip, including the hotel and train tickets.",
+      });
+       db.insert('Words', {
+        'word': "Consider",
+        'example_sentence': "I should have considered that.",
+      });
+       db.insert('Words', {
+        'word': "Appear",
+        'example_sentence': "A ghost appeared to me at night.",
+      });
+       db.insert('Words', {
+        'word': "Actually",
+        'example_sentence': "Do you actually believe that fairies exist?",
+      });
+       db.insert('Words', {
+        'word': "Buy",
+        'example_sentence': "I’m going to buy these shoes.",
+      });
+       db.insert('Words', {
+        'word': "Probably",
+        'example_sentence': "She would probably never see him again.",
+      });
+       db.insert('Words', {
+        'word': "Human",
+        'example_sentence': "They are only human and therefore mistakes do occur.",
+      });
+       db.insert('Words', {
+        'word': "Wait",
+        'example_sentence': "I can't wait that long.",
+      });
+       db.insert('Words', {
+        'word': "Serve",
+        'example_sentence': "Breakfast at the hotel is served at 8 am.",
+      });
+       db.insert('Words', {
+        'word': "Market",
+        'example_sentence': "She bought some fruit at the market.",
+      });
+       db.insert('Words', {
+        'word': "Die",
+        'example_sentence': "I don’t want my cat to die, let’s take him to the vet.",
+      });
+       db.insert('Words', {
+        'word': "Send",
+        'example_sentence': "Please send the package to my address.",
+      });
+       db.insert('Words', {
+        'word': "Expect",
+        'example_sentence': "She's expecting a baby.",
+      });
+       db.insert('Words', {
+        'word': "Sense",
+        'example_sentence': "We had a sense we were in the wrong place.",
+      });
+       db.insert('Words', {
+        'word': "Build",
+        'example_sentence': "The city council plans to build a bridge.",
+      });
+       db.insert('Words', {
+        'word': "Stay",
+        'example_sentence': "Stay here with me forever.",
+      });
+       db.insert('Words', {
+        'word': "Fall",
+        'example_sentence': "Yesterday I fell off the ladder.",
+      });
+       db.insert('Words', {
+        'word': "Nation",
+        'example_sentence': "We must unite as a nation.",
+      });
+       db.insert('Words', {
+        'word': "Plan",
+        'example_sentence': "I plan to go on a trip on the weekend.",
+      });
+       db.insert('Words', {
+        'word': "Cut",
+        'example_sentence': "The hairdresser cut too much of my hair.",
+      });
+       db.insert('Words', {
+        'word': "College",
+        'example_sentence': "He's studying English at college.",
+      });
+       db.insert('Words', {
+        'word': "Interest",
+        'example_sentence': "They have no interest in politics.",
+      });
+       db.insert('Words', {
+        'word': "Interest",
+        'example_sentence': "They have no interest in politics.",
+      });
+       db.insert('Words', {
+        'word': "Death",
+        'example_sentence': "He was afraid of death.",
+      });
+       db.insert('Words', {
+        'word': "Course",
+        'example_sentence': "I signed up for a drawing course.",
+      });
+       db.insert('Words', {
+        'word': "Someone",
+        'example_sentence': "Someone has entered the house.",
+      });
+       db.insert('Words', {
+        'word': "Experience",
+        'example_sentence': "We are looking for candidates with two years of experience.",
+      });
+       db.insert('Words', {
+        'word': "Behind",
+        'example_sentence': "I’m scared to check what’s behind that door.",
+      });
+       db.insert('Words', {
+        'word': "Reach",
+        'example_sentence': "The cable won't reach the socket.",
+      });
+       db.insert('Words', {
+        'word': "Local",
+        'example_sentence': "It was published in the local newspaper.",
+      });
+       db.insert('Words', {
+        'word': "Kill",
+        'example_sentence': "I'll kill him if he doesn't keep quiet!",
+      });
+       db.insert('Words', {
+        'word': "Six",
+        'example_sentence': "Twenty minus six makes fourteen.",
+      });
+       db.insert('Words', {
+        'word': "Remain",
+        'example_sentence': "We don't know how many remain under the rubble.",
+      });
+       db.insert('Words', {
+        'word': "Effect",
+        'example_sentence': "The new law had little effect on people.",
+      });
+       db.insert('Words', {
+        'word': "Yeah",
+        'example_sentence': "Yeah, he did call me earlier.",
+      });
+       db.insert('Words', {
+        'word': "Suggest",
+        'example_sentence': "She suggested having coffee on the terrace.",
+      });
+       db.insert('Words', {
+        'word': "Class",
+        'example_sentence': "We were in the same English class.",
+      });
+       db.insert('Words', {
+        'word': "Control",
+        'example_sentence': "We were in the same English class.",
+      });
+       db.insert('Words', {
+        'word': "Raise",
+        'example_sentence': "We need to raise the standard of teaching.",
+      });
+       db.insert('Words', {
+        'word': "Care",
+        'example_sentence': "They don't care about human life.",
+      });
+       db.insert('Words', {
+        'word': "Perhaps",
+        'example_sentence': "Perhaps I should have been frank with him.",
+      });
+       db.insert('Words', {
+        'word': "Late",
+        'example_sentence': "I'm late for a meeting.",
+      });
+
 
       /////////////////
     });
