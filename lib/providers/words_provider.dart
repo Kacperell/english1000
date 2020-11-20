@@ -1628,6 +1628,46 @@ class WordsProvider {
         'word': "Late",
         'example_sentence': "I'm late for a meeting.",
       });
+       db.insert('Words', {
+        'word': "Hard",
+        'example_sentence': "He trains hard.",
+      });
+       db.insert('Words', {
+        'word': "Field",
+        'example_sentence': "What do you grow in your field?",
+      });
+       db.insert('Words', {
+        'word': "Else",
+        'example_sentence': "Anyone else coming to the party?",
+      });
+       db.insert('Words', {
+        'word': "Pass",
+        'example_sentence': "You need to pass through a gate to enter inside.",
+      });
+       db.insert('Words', {
+        'word': "Former",
+        'example_sentence': "Her former husband now lives in Warsaw.",
+      });
+       db.insert('Words', {
+        'word': "Sell",
+        'example_sentence': "I can sell you my old clothes.",
+      });
+       db.insert('Words', {
+        'word': "Major",
+        'example_sentence': "It’s a major issue for the project.",
+      });
+       db.insert('Words', {
+        'word': "Sometimes",
+        'example_sentence': "Sometimes I forget to brush my teeth.",
+      });
+       db.insert('Words', {
+        'word': "Require",
+        'example_sentence': "Sometimes I forget to brush my teeth.",
+      });
+       db.insert('Words', {
+        'word': "Along",
+        'example_sentence': "Sometimes I forget to brush my teeth.",
+      });
 
 
       /////////////////
